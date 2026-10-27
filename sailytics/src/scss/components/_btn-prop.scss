@@ -1,0 +1,57 @@
+// ═══════════════════════════════════════════
+// Mode + View Toggle Buttons
+// ═══════════════════════════════════════════
+
+// Propulsion mode buttons (SAIL / ROTOR / HYBRID)
+.btn-mode {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  border-radius: 3px;
+
+  &:hover:not(.active) {
+    color: var(--text-secondary);
+    background: rgba(56, 189, 248, 0.06);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, var(--accent) 0%, #0ea5e9 100%);
+    color: #010a14;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+}
+
+// View toggle buttons (2D / 3D)
+.btn-view {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  border-radius: 3px;
+
+  &:hover:not(.active) {
+    color: var(--text-secondary);
+    background: rgba(6, 214, 160, 0.06);
+  }
+
+  &.active {
+    background: linear-gradient(135deg, var(--cyan) 0%, #059669 100%);
+    color: #010a14;
+    box-shadow: 0 0 10px rgba(6, 214, 160, 0.3);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+}

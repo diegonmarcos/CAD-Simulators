@@ -1,0 +1,18 @@
+// ═══════════════════════════════════════════
+// Control Section Headers
+// ═══════════════════════════════════════════
+
+@use '../abstracts/mixins' as *;
+
+.ctrl-header {
+  @include panel-header;
+  position: relative;
+}
+
+.ctrl-header--sail {
+  @include panel-header(var(--pink), var(--pink));
+}
+
+.ctrl-header--rotor {
+  @include panel-header(var(--orange), var(--orange));
+}

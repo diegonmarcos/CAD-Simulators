@@ -1,0 +1,33 @@
+// ═══════════════════════════════════════════
+// Controls Sidebar — Narrow Input Panel
+// ═══════════════════════════════════════════
+
+.controls {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  background: linear-gradient(180deg, #061424 0%, #081828 100%);
+  overflow-y: auto;
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  border-right: 1px solid var(--border);
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(56, 189, 248, 0.1), transparent 60%);
+    pointer-events: none;
+  }
+}
+
+.ctrl-section {
+  margin-bottom: var(--space-md);
+  padding-top: var(--space-sm);
+
+  & + & {
+    border-top: 1px solid rgba(26, 58, 92, 0.4);
+  }
+}

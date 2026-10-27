@@ -1,0 +1,40 @@
+// ═══════════════════════════════════════════
+// Circular Gauge Instruments
+// ═══════════════════════════════════════════
+
+.gauge-svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.12));
+}
+
+.gauge-label {
+  fill: var(--text-muted);
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.gauge-value {
+  fill: var(--text-primary);
+  font-size: 22px;
+  font-weight: 900;
+  font-family: var(--font-mono);
+}
+
+.gauge-unit {
+  fill: var(--text-dim);
+  font-size: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.gauge-arc {
+  transition: stroke 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 3px currentColor);
+}
+
+.gauge-bg {
+  opacity: 0.06;
+}

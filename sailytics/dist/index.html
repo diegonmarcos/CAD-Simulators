@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Sailyng — Propulsion and Fluid Mechanics</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+    (function() {
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src='https://analytics.diegonmarcos.com/matomo/js/container_odwLIyPV.js';
+      s.parentNode.insertBefore(g,s);
+    })();
+    </script>
+<!-- Umami Analytics -->
+<script async src="https://analytics.diegonmarcos.com/umami/script.js" data-website-id="937cbde7-5ec2-450c-9d6a-8117423ac12f"></script>
+<!-- End Umami Analytics -->
+
+    <!-- Data-driven framework: PORTAL_DATA["sailytics"] hydrated by front-data-json-js-wrapper.sh -->
+    <script src="data-sailytics.json.js"></script>
+    <script>(function(){var d=globalThis.PORTAL_DATA&&PORTAL_DATA["sailytics"];if(d&&d.title)document.title=d.title;})();</script>
+<!-- sw-register: injected by mod_sw_register — DO NOT EDIT BY HAND. Re-runs are idempotent (the marker comment above gates the injection). -->
+<script>
+(function () {
+  // ── Visible boot log: ALWAYS something in console, even if every other
+  // script breaks. If the user sees nothing here, the inline script tag
+  // itself was blocked (CSP, extension, etc.) — not a SW bug.
+  var TAG = '[sw-register]';
+  var t0 = Date.now();
+  console.info(TAG, 'boot', { url: location.href, ua: navigator.userAgent.slice(0, 60) });
+
+  if (!('serviceWorker' in navigator) || !location.protocol.startsWith('http')) {
+    console.info(TAG, 'skip — no serviceWorker or non-http(s) origin');
+    return;
+  }
+
+  var hadController = navigator.serviceWorker.controller !== null;
+  console.info(TAG, 'controller-at-boot', hadController ? navigator.serviceWorker.controller.scriptURL : 'null');
+
+  // ── Kill-switch ALWAYS available on window: dev can call from console
+  //    or the auto-watchdog below uses it when the page stays blank.
+  window.__resetSW = function (reason) {
+    console.warn(TAG, '__resetSW invoked', { reason: reason || 'manual' });
+    return navigator.serviceWorker.getRegistrations()
+      .then(function (regs) {
+        console.info(TAG, 'unregistering ' + regs.length + ' SW(s)');
+        return Promise.all(regs.map(function (r) { return r.unregister(); }));
+      })
+      .then(function () {
+        return caches.keys().then(function (keys) {
+          console.info(TAG, 'purging ' + keys.length + ' cache(s)', keys);
+          return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+        });
+      })
+      .then(function () {
+        console.info(TAG, 'reset complete — reloading');
+        location.reload();
+      });
+  };
+
+  // ── Reload on controllerchange ONLY when an OLD SW was replaced by a NEW one
+  //    (post-deploy update). Skip on first-ever activation — reloading then
+  //    aborts the in-flight `defer` script.js and the SPA never boots.
+  var reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', function () {
+    console.info(TAG, 'controllerchange', {
+      newController: navigator.serviceWorker.controller ? navigator.serviceWorker.controller.scriptURL : 'null',
+      hadController: hadController,
+      willReload: hadController && !reloading
+    });
+    if (!hadController || reloading) return;
+    reloading = true;
+    location.reload();
+  });
+
+  function reg() {
+    console.info(TAG, 'registering ./script-service-worker.js');
+    navigator.serviceWorker.register('./script-service-worker.js')
+      .then(function (r) {
+        console.info(TAG, 'register OK', {
+          scope: r.scope,
+          installing: !!r.installing,
+          waiting: !!r.waiting,
+          active: !!r.active
+        });
+      })
+      .catch(function (e) {
+        console.error(TAG, 'register FAILED', e && e.message);
+      });
+  }
+  if ('requestIdleCallback' in window) requestIdleCallback(reg); else setTimeout(reg, 1);
+
+  // ── Watchdog: if a SW is controlling the page AND the body's #app stays
+  //    empty after 4 seconds AND there's no SPA mark in the DOM, assume the
+  //    SW poisoned the response (stale precache, hash mismatch, partial
+  //    fetch). Auto-reset and reload — the next load fetches fresh from
+  //    network with no SW controller.
+  //
+  //    Only fires when hadController = true (i.e. NOT first-ever load).
+  //    The 4s threshold is conservative — even a slow 3G load completes
+  //    its critical-path script within 2s.
+  if (hadController) {
+    setTimeout(function () {
+      var app = document.getElementById('app');
+      var appEmpty = !app || (app.childElementCount === 0 && !app.textContent);
+      var bodyEmpty = !document.body || document.body.childElementCount <= 1;
+      console.info(TAG, 'watchdog t+' + (Date.now() - t0) + 'ms', {
+        appEmpty: appEmpty, bodyEmpty: bodyEmpty,
+        controller: navigator.serviceWorker.controller ? 'yes' : 'no'
+      });
+      if (appEmpty && bodyEmpty && navigator.serviceWorker.controller && !reloading) {
+        reloading = true;
+        window.__resetSW('watchdog: app + body still empty after 4s with SW in control');
+      }
+    }, 4000);
+  }
+})();
+</script>
+<!-- console-log: injected by mod_console_log — DO NOT EDIT BY HAND. Re-runs are idempotent (the marker comment above gates the injection). Single-namespace observability SDK (Sentry/OpenObserve-style). All logic ships in console-logs.js (compiled from console-logs.ts). Loaded synchronously, NO async/defer, so console.* + window.onerror + unhandledrejection are patched BEFORE any other script runs. Public API on window.consoleLogs.{captureException, captureMessage, addBreadcrumb, path, sessionId, exists, size, read, readJSON, tail, clear, download}. JSON Lines on disk in the origin's OPFS sandbox at console.log. -->
+<script src="console-logs.js"></script>
+<!-- end console-log -->
+  </head>
+<body>
+
+<div class="app">
+
+    <!-- ═══ TOOLBAR ═══ -->
+    <header class="toolbar">
+        <div class="toolbar__brand">
+            <h1 class="toolbar__title">SAILYNG <span class="toolbar__accent">Propulsion &amp; Fluid Mechanics</span></h1>
+        </div>
+        <nav class="toolbar__modes">
+            <button id="mode-sail" class="btn-mode active" type="button">SAIL</button>
+            <button id="mode-rotor" class="btn-mode" type="button">ROTOR</button>
+            <button id="mode-hybrid" class="btn-mode" type="button">HYBRID</button>
+        </nav>
+        <div class="toolbar__views">
+            <button id="view-2d" class="btn-view active" type="button">2D Analysis</button>
+            <button id="view-3d" class="btn-view" type="button">3D Scene</button>
+        </div>
+    </header>
+
+    <!-- ═══ CONTROLS SIDEBAR ═══ -->
+    <aside class="controls">
+        <div class="ctrl-section">
+            <div class="ctrl-header">Environment</div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="twd">Wind Direction</label>
+                    <span class="ctrl-val" id="disp-twd">45°T</span>
+                </div>
+                <input type="range" id="twd" min="0" max="360" value="45">
+            </div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="tws">Wind Speed</label>
+                    <span class="ctrl-val" id="disp-tws">15 kts</span>
+                </div>
+                <input type="range" id="tws" min="0" max="50" value="15">
+            </div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="decl">Mag. Declination</label>
+                    <span class="ctrl-val ctrl-val--red" id="disp-decl">10°E</span>
+                </div>
+                <input type="range" id="decl" min="-30" max="30" value="10" step="1">
+            </div>
+        </div>
+
+        <div class="ctrl-section">
+            <div class="ctrl-header">Vessel</div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="hdg">Heading (True)</label>
+                    <span class="ctrl-val" id="disp-hdg">0°T</span>
+                </div>
+                <input type="range" id="hdg" min="0" max="360" value="0">
+            </div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="bs">Boat Speed</label>
+                    <span class="ctrl-val" id="disp-bs">6 kts</span>
+                </div>
+                <input type="range" id="bs" min="0" max="30" value="6">
+            </div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="mass">Displacement</label>
+                    <span class="ctrl-val" id="disp-mass">5000 kg</span>
+                </div>
+                <input type="range" id="mass" min="1000" max="50000" value="5000" step="500">
+            </div>
+        </div>
+
+        <section id="ui-sail" class="ctrl-section">
+            <div class="ctrl-header ctrl-header--sail">Sail</div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="sang">Trim Angle</label>
+                    <span class="ctrl-val" id="disp-sang">35°</span>
+                </div>
+                <input type="range" id="sang" min="-90" max="90" value="35">
+            </div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="sarea">Sail Area</label>
+                    <span class="ctrl-val" id="disp-sarea">35 m²</span>
+                </div>
+                <input type="range" id="sarea" min="5" max="150" value="35">
+            </div>
+        </section>
+
+        <section id="ui-rotor" class="ctrl-section hidden">
+            <div class="ctrl-header ctrl-header--rotor">Rotor</div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="rpm">RPM</label>
+                    <span class="ctrl-val ctrl-val--orange" id="disp-rpm">180</span>
+                </div>
+                <input type="range" id="rpm" min="-500" max="500" value="180" step="10">
+            </div>
+            <div class="ctrl-group">
+                <div class="ctrl-row">
+                    <label for="rh">Rotor Height</label>
+                    <span class="ctrl-val" id="disp-rh">12 m</span>
+                </div>
+                <input type="range" id="rh" min="4" max="25" value="12">
+            </div>
+        </section>
+    </aside>
+
+    <!-- ═══ VIEWPORT (2D / 3D) ═══ -->
+    <div class="viewport">
+        <div id="viewport-2d" class="viewport__panel">
+            <div id="canvas-2d-container" class="viewport__wrap">
+                <canvas id="canvas-2d"></canvas>
+            </div>
+            <div class="legend legend--compass">
+                <h4 class="legend__title">Compass</h4>
+                <div class="legend__item">
+                    <span class="legend__swatch legend__swatch--gray"></span> True North
+                </div>
+                <div class="legend__item">
+                    <span class="legend__swatch legend__swatch--red"></span> Magnetic North
+                </div>
+            </div>
+            <div class="legend legend--vectors">
+                <h4 class="legend__title">Forces</h4>
+                <div class="legend__grid">
+                    <div class="legend__item"><span class="legend__swatch legend__swatch--blue"></span> True Wind</div>
+                    <div class="legend__item"><span class="legend__swatch legend__swatch--cyan"></span> Apparent Wind</div>
+                    <div class="legend__item"><span class="legend__swatch legend__swatch--pink"></span> Lift</div>
+                    <div class="legend__item"><span class="legend__swatch legend__swatch--orange"></span> Drag</div>
+                    <div class="legend__item"><span class="legend__swatch legend__swatch--green"></span> Drive</div>
+                    <div class="legend__item"><span class="legend__swatch legend__swatch--red"></span> Heel</div>
+                    <div class="legend__item legend__item--full"><span class="legend__swatch legend__swatch--indigo"></span> Hull Drag</div>
+                </div>
+            </div>
+        </div>
+        <div id="viewport-3d" class="viewport__panel viewport__panel--hidden">
+            <div id="container-3d" class="viewport__wrap"></div>
+        </div>
+    </div>
+
+    <!-- ═══ DATA BAR ═══ -->
+    <footer class="databar">
+        <div class="databar__gauges">
+            <div class="gauge-compact" id="gauge-aws"></div>
+            <div class="gauge-compact" id="gauge-vmg"></div>
+            <div class="gauge-compact" id="gauge-bs"></div>
+        </div>
+        <div class="databar__sep"></div>
+        <div class="databar__metrics">
+            <div class="metric">
+                <span class="metric__label">AWA</span>
+                <span class="data-value data-value--cyan" id="out-awa">0°</span>
+                <div class="metric__spark" id="spark-awa"></div>
+            </div>
+            <div class="metric">
+                <span class="metric__label">TWA</span>
+                <span class="data-value" id="out-twa">0°</span>
+                <div class="data-card__trend" id="trend-twa"></div>
+            </div>
+            <div class="metric">
+                <span class="metric__label">Heel</span>
+                <span class="data-value data-value--orange" id="out-heel-angle">0.0°</span>
+                <div class="metric__spark" id="spark-heel"></div>
+            </div>
+            <div class="metric">
+                <span class="metric__label">Leeway</span>
+                <span class="data-value" id="out-leeway">0.0°</span>
+            </div>
+            <div class="metric">
+                <span class="metric__label">COG</span>
+                <span class="data-value" id="out-cog">0°T</span>
+            </div>
+            <div class="metric">
+                <span class="metric__label">Polar %</span>
+                <span class="data-value data-value--green" id="out-polar">0%</span>
+            </div>
+            <div class="databar__sep"></div>
+            <div class="metric">
+                <span class="metric__label">Drive</span>
+                <span class="data-value data-value--green" id="out-drive">0 N</span>
+            </div>
+            <div class="metric">
+                <span class="metric__label">Heel F</span>
+                <span class="data-value data-value--red" id="out-heel">0 N</span>
+            </div>
+            <div class="metric">
+                <span class="metric__label">Hull</span>
+                <span class="data-value data-value--indigo" id="out-hdrag">0 N</span>
+            </div>
+            <div class="metric">
+                <span class="metric__label">Wave</span>
+                <span class="data-value data-value--indigo" id="out-wdrag">0 N</span>
+            </div>
+            <div class="metric">
+                <span class="metric__label">Accel</span>
+                <span class="data-value data-value--yellow" id="out-acc">0.000</span>
+                <div class="data-card__trend" id="trend-acc"></div>
+            </div>
+            <div class="metric">
+                <span class="metric__label">Spin &alpha;</span>
+                <span class="data-value data-value--orange" id="out-alpha">0.0</span>
+            </div>
+            <div class="metric metric--wide">
+                <span class="metric__label">Trim</span>
+                <span class="data-value" id="out-trim">OK</span>
+                <div class="data-card__trend" id="trend-stall"></div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

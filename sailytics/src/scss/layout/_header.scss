@@ -1,0 +1,70 @@
+// ═══════════════════════════════════════════
+// Toolbar — Top Navigation Strip
+// ═══════════════════════════════════════════
+
+.toolbar {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  background: linear-gradient(90deg, #061424 0%, #0a1e38 50%, #081828 100%);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-lg);
+  gap: var(--space-lg);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--accent) 25%,
+      var(--cyan) 50%,
+      var(--accent) 75%,
+      transparent 100%
+    );
+    opacity: 0.5;
+  }
+}
+
+.toolbar__brand {
+  margin-right: auto;
+}
+
+.toolbar__title {
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: white;
+  text-shadow: 0 0 24px rgba(56, 189, 248, 0.3);
+  white-space: nowrap;
+}
+
+.toolbar__accent {
+  color: var(--cyan);
+  text-shadow: 0 0 16px rgba(6, 214, 160, 0.4);
+}
+
+.toolbar__modes {
+  display: flex;
+  gap: 0;
+  background: var(--bg-primary);
+  padding: 2px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.toolbar__views {
+  display: flex;
+  gap: 0;
+  background: var(--bg-primary);
+  padding: 2px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}

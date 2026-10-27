@@ -1,0 +1,97 @@
+// ═══════════════════════════════════════════
+// Data Bar — Compact Bottom Telemetry Strip
+// ═══════════════════════════════════════════
+
+.databar {
+  grid-column: 2;
+  grid-row: 3;
+  background: linear-gradient(180deg, #061424 0%, #051220 100%);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: stretch;
+  padding: var(--space-xs) var(--space-sm);
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 5%;
+    right: 5%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.2), transparent);
+    pointer-events: none;
+  }
+}
+
+.databar__gauges {
+  display: flex;
+  gap: var(--space-xs);
+  padding-right: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.databar__sep {
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--border), transparent);
+  margin: var(--space-xs) var(--space-sm);
+  flex-shrink: 0;
+}
+
+.databar__metrics {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex: 1;
+  overflow-x: auto;
+  padding: var(--space-xs) 0;
+}
+
+// Individual metric cell
+.metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  min-width: 56px;
+  flex-shrink: 0;
+  gap: 1px;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: rgba(56, 189, 248, 0.04);
+  }
+}
+
+.metric--wide {
+  min-width: 72px;
+}
+
+.metric__label {
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.metric__spark {
+  width: 100%;
+  height: 14px;
+  opacity: 0.7;
+}
+
+// Compact gauge container
+.gauge-compact {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

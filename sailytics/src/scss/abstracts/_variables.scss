@@ -1,0 +1,62 @@
+// ═══════════════════════════════════════════
+// Design Tokens — Sailyng PRO
+// ═══════════════════════════════════════════
+
+:root {
+  // Deep ocean palette
+  --bg-primary: #010a14;
+  --bg-panel: #061424;
+  --bg-card: #0c1f35;
+  --bg-card-hover: #102a45;
+  --bg-panel-alt: #081828;
+  --bg-elevated: #0f2640;
+  --bg-surface: #0a1a2e;
+
+  // Borders
+  --border: #1a3a5c;
+  --border-glow: rgba(56, 189, 248, 0.15);
+  --border-active: rgba(56, 189, 248, 0.4);
+
+  // Text hierarchy
+  --text-primary: #e8f4ff;
+  --text-secondary: #7eb8dc;
+  --text-muted: #4a7a9e;
+  --text-dim: #2d5a7e;
+
+  // Accent colors
+  --accent: #38bdf8;
+  --accent-light: #7dd3fc;
+  --accent-glow: rgba(56, 189, 248, 0.35);
+  --cyan: #06d6a0;
+  --pink: #ff6b9d;
+  --orange: #ff9f43;
+  --orange-light: #ffc078;
+  --green: #00e676;
+  --red: #ff5252;
+  --red-dark: #d32f2f;
+  --yellow: #ffea00;
+  --indigo: #6c63ff;
+  --indigo-light: #9d97ff;
+  --blue: #448aff;
+
+  // Typography
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  // Spacing
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.25rem;
+
+  // Radii
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+
+  // Layout — New architecture
+  --controls-width: 220px;
+  --toolbar-height: 46px;
+  --databar-height: 110px;
+}

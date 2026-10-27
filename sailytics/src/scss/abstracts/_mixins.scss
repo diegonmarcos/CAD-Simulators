@@ -1,0 +1,25 @@
+// ═══════════════════════════════════════════
+// Reusable Patterns
+// ═══════════════════════════════════════════
+
+@mixin panel-header($color: var(--accent), $border-color: var(--accent)) {
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: $color;
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.14em;
+  border-left: 2px solid $border-color;
+  padding-left: var(--space-sm);
+  text-shadow: 0 0 10px $color;
+}
+
+@mixin legend-box {
+  position: absolute;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(6, 20, 36, 0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
