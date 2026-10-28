@@ -1,6 +1,6 @@
-# DeepSc-Tools
+# CAD-Simulators
 
-Tools for the DeepSc family. CAD tools are pinned git submodules of their upstream; sailytics is in-repo code.
+CAD and simulators for the DeepSc family (renamed from DeepSc-Tools, public). CAD tools are pinned git submodules of their upstream; sailytics is in-repo code.
 
 ## Sailytics
 
