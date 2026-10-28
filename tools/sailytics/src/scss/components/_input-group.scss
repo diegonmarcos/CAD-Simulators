@@ -1,0 +1,36 @@
+// ═══════════════════════════════════════════
+// Control Groups (Label + Slider)
+// ═══════════════════════════════════════════
+
+.ctrl-group {
+  margin-bottom: var(--space-sm);
+  padding: 2px 0;
+}
+
+.ctrl-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 0.65rem;
+  margin-bottom: 2px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.ctrl-val {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.62rem;
+  text-shadow: 0 0 6px rgba(56, 189, 248, 0.2);
+}
+
+.ctrl-val--red {
+  color: var(--red);
+  text-shadow: 0 0 6px rgba(255, 82, 82, 0.2);
+}
+
+.ctrl-val--orange {
+  color: var(--orange);
+  text-shadow: 0 0 6px rgba(255, 159, 67, 0.2);
+}

@@ -1,0 +1,51 @@
+// ═══════════════════════════════════════════
+// Status Indicators & Trends
+// ═══════════════════════════════════════════
+
+.data-card__trend {
+  font-size: 0.55rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.trend--up {
+  color: var(--green);
+}
+
+.trend--down {
+  color: var(--red);
+}
+
+.trend--stable {
+  color: var(--text-dim);
+}
+
+.status-led {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse-led 2s ease-in-out infinite;
+}
+
+@keyframes pulse-led {
+  0%, 100% { box-shadow: 0 0 3px currentColor; }
+  50% { box-shadow: 0 0 8px currentColor, 0 0 16px currentColor; }
+}
+
+.status-led--green {
+  background: var(--green);
+  color: var(--green);
+}
+
+.status-led--yellow {
+  background: var(--yellow);
+  color: var(--yellow);
+}
+
+.status-led--red {
+  background: var(--red);
+  color: var(--red);
+}

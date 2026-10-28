@@ -1,0 +1,97 @@
+// ═══════════════════════════════════════════
+// Canvas Overlay Legends
+// ═══════════════════════════════════════════
+
+@use '../abstracts/mixins' as *;
+
+.legend {
+  @include legend-box;
+  z-index: 2;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.legend--compass {
+  top: var(--space-md);
+  left: var(--space-md);
+}
+
+.legend--vectors {
+  bottom: var(--space-md);
+  left: var(--space-md);
+}
+
+.legend__title {
+  font-size: 0.5rem;
+  font-weight: 800;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.12em;
+}
+
+.legend__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px var(--space-lg);
+}
+
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.52rem;
+  color: var(--text-secondary);
+}
+
+.legend__item--full {
+  grid-column: 1 / -1;
+}
+
+.legend__swatch {
+  width: 12px;
+  height: 2px;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 1px;
+  box-shadow: 0 0 3px currentColor;
+}
+
+.legend__swatch--gray {
+  background: #7eb8dc;
+  color: #7eb8dc;
+}
+
+.legend__swatch--blue {
+  background: #448aff;
+  color: #448aff;
+}
+
+.legend__swatch--cyan {
+  background: #06d6a0;
+  color: #06d6a0;
+}
+
+.legend__swatch--pink {
+  background: #ff6b9d;
+  color: #ff6b9d;
+}
+
+.legend__swatch--orange {
+  background: #ff9f43;
+  color: #ff9f43;
+}
+
+.legend__swatch--green {
+  background: #00e676;
+  color: #00e676;
+}
+
+.legend__swatch--red {
+  background: #ff5252;
+  color: #ff5252;
+}
+
+.legend__swatch--indigo {
+  background: #6c63ff;
+  color: #6c63ff;
+}

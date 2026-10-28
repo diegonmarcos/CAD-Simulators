@@ -1,0 +1,74 @@
+// ═══════════════════════════════════════════
+// Custom Range Slider — Marine Instrument
+// ═══════════════════════════════════════════
+
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+  height: 24px;
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+      90deg,
+      rgba(26, 58, 92, 0.8) 0%,
+      rgba(56, 189, 248, 0.15) 100%
+    );
+    border-radius: 3px;
+    border: 1px solid rgba(26, 58, 92, 0.6);
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #7dd3fc, var(--accent));
+    cursor: pointer;
+    margin-top: -7px;
+    border: 2px solid #061424;
+    box-shadow: 0 0 6px rgba(56, 189, 248, 0.3);
+    transition: box-shadow 0.15s ease, transform 0.1s ease;
+  }
+
+  &:hover::-webkit-slider-thumb {
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.6), 0 0 4px rgba(56, 189, 248, 0.8);
+    transform: scale(1.1);
+  }
+
+  &:active::-webkit-slider-thumb {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.8), 0 0 6px rgba(56, 189, 248, 1);
+    transform: scale(1.15);
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(
+      90deg,
+      rgba(26, 58, 92, 0.8) 0%,
+      rgba(56, 189, 248, 0.15) 100%
+    );
+    border-radius: 3px;
+    border: 1px solid rgba(26, 58, 92, 0.6);
+  }
+
+  &::-moz-range-thumb {
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #7dd3fc, var(--accent));
+    cursor: pointer;
+    border: 2px solid #061424;
+    box-shadow: 0 0 6px rgba(56, 189, 248, 0.3);
+    transition: box-shadow 0.15s ease, transform 0.1s ease;
+  }
+
+  &:hover::-moz-range-thumb {
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.6);
+  }
+}

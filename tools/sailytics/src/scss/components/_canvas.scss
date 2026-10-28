@@ -1,0 +1,51 @@
+// ═══════════════════════════════════════════
+// Viewport — Full-Area Canvas / 3D Container
+// ═══════════════════════════════════════════
+
+.viewport {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-primary);
+  touch-action: none;
+}
+
+.viewport__panel {
+  position: absolute;
+  inset: 0;
+}
+
+.viewport__panel--hidden {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.viewport__wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #010a14; // fallback if WebGL shader fails
+  touch-action: none;
+}
+
+#canvas-2d {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 2; // above WebGL bg canvas (z:0)
+}
+
+// 3D container — touch-action:none is CRITICAL for pinch-zoom on touch desktops (Surface etc.)
+#container-3d {
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+
+  canvas {
+    touch-action: none;
+  }
+}

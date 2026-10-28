@@ -1,0 +1,42 @@
+// ═══════════════════════════════════════════
+// Data Values — Used in databar metrics
+// ═══════════════════════════════════════════
+
+.data-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.data-value--cyan {
+  color: var(--cyan);
+  text-shadow: 0 0 8px rgba(6, 214, 160, 0.25);
+}
+
+.data-value--yellow {
+  color: var(--yellow);
+  text-shadow: 0 0 8px rgba(255, 234, 0, 0.2);
+}
+
+.data-value--green {
+  color: var(--green);
+  text-shadow: 0 0 8px rgba(0, 230, 118, 0.25);
+}
+
+.data-value--red {
+  color: var(--red);
+  text-shadow: 0 0 8px rgba(255, 82, 82, 0.25);
+}
+
+.data-value--indigo {
+  color: var(--indigo-light);
+  text-shadow: 0 0 8px rgba(157, 151, 255, 0.2);
+}
+
+.data-value--orange {
+  color: var(--orange);
+  text-shadow: 0 0 8px rgba(255, 159, 67, 0.25);
+}
