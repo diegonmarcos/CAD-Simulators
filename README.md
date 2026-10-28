@@ -1,6 +1,10 @@
 # DeepSc-Tools
 
-Tools for the DeepSc family. Each tool is a pinned git submodule of its upstream; no code is copied.
+Tools for the DeepSc family. CAD tools are pinned git submodules of their upstream; sailytics is in-repo code.
+
+## Sailytics
+
+`tools/sailytics`: in-repo code (not a submodule), moved with history from Projects-labtools `c-Stk_DsX/sailytics` (#1260). Own `build.json`/`build.sh`/`ship.yml`.
 
 ## CAD: agentic 3D modelling over MCP
 
