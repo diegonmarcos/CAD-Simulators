@@ -1,0 +1,58 @@
+{
+  "schema": "readme-node/v1",
+  "generated_by": "_git-repos-master readme-render.js nodeData() from projects-repos.json; DO NOT EDIT (node repos-sot.js sync-readmes)",
+  "name": "CAD-Simulators",
+  "label": "CAD-Simulators",
+  "code": "4.3.1.1",
+  "kind": "repo",
+  "description": "DeepSc tools: agentic CAD (MCP) and more",
+  "visibility": "public",
+  "url": "https://github.com/diegonmarcos/CAD-Simulators",
+  "developer": "Stark.x",
+  "farm": "4.HardTech",
+  "breadcrumb": [
+    {
+      "code": "4",
+      "kind": "area",
+      "label": "HardTech",
+      "icon": "🔬"
+    },
+    {
+      "code": "4.3",
+      "kind": "project",
+      "label": "Stack-CAD-Simulators",
+      "icon": "📐"
+    },
+    {
+      "code": "4.3.1",
+      "kind": "family",
+      "label": "CAD",
+      "icon": ""
+    }
+  ],
+  "hub": {
+    "name": "DeepSc-___",
+    "code": "4.0",
+    "url": "https://github.com/diegonmarcos/DeepSc-___"
+  },
+  "base_dir": "git",
+  "members": [],
+  "tree": [
+    "├── 0_hub/",
+    "│   └── DeepSc-___ (submodule)",
+    "├── Simulators/",
+    "│   ├── blender-mcp (submodule)",
+    "│   └── sailytics/",
+    "│       ├── dist/",
+    "│       ├── docs/",
+    "│       └── src/",
+    "└── Structural-Designer/",
+    "    ├── OpenBIM/",
+    "    │   └── bonsai-mcp (submodule)",
+    "    ├── OpenCAD/",
+    "    │   ├── autocad-mcp (submodule)",
+    "    │   └── freecad-mcp (submodule)",
+    "    └── OpenRevit/",
+    "        └── rvt-mcp (submodule)"
+  ]
+}
