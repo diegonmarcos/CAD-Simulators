@@ -10,3 +10,9 @@
 [submodule "0_hub/DeepSc-___"]
 	path = 0_hub/DeepSc-___
 	url = https://github.com/diegonmarcos/DeepSc-___
+[submodule "Structural-Designer/OpenRevit/rvt-mcp"]
+	path = Structural-Designer/OpenRevit/rvt-mcp
+	url = https://github.com/bimwright/rvt-mcp
+[submodule "Structural-Designer/OpenBIM/bonsai-mcp"]
+	path = Structural-Designer/OpenBIM/bonsai-mcp
+	url = https://github.com/JotaDeRodriguez/Bonsai_mcp

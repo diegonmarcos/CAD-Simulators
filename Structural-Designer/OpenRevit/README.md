@@ -6,7 +6,7 @@ Subfolder of Structural-Designer.
 
 Scope: Revit-like parametric BIM authoring (walls, floors, families, schedules, views) driven by an agent.
 
-MCP candidates (repositories exist, checked with `git ls-remote`; stars, licence file and recent activity not yet reviewed, so nothing is pinned): [mcp-servers-for-revit/mcp-servers-for-revit](https://github.com/mcp-servers-for-revit/mcp-servers-for-revit) and [revit-mcp/revit-mcp-plugin](https://github.com/revit-mcp/revit-mcp-plugin), both drive Autodesk Revit (Windows). Pin one as a submodule after that review.
+Pinned MCP server: `rvt-mcp/` → [bimwright/rvt-mcp](https://github.com/bimwright/rvt-mcp) (BIMwright, AI-native Revit MCP server for Revit 2022–2027; Apache-2.0; ~100 stars; last commit 2026-10-23 at pin). Chosen over [LuDattilo/revit-mcp-server](https://github.com/LuDattilo/revit-mcp-server) (mcp-servers-for-revit, ~80 stars) for activity and Revit version range. Needs Autodesk Revit on Windows.
 
 ## FOSS references
 

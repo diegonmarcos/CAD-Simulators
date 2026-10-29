@@ -6,7 +6,7 @@ Subfolder of Structural-Designer.
 
 Scope: open BIM through IFC (buildingSMART): create, read and edit IFC models with open tooling (IfcOpenShell, Bonsai).
 
-MCP candidate (repository exists, checked with `git ls-remote`; stars, licence file and recent activity not yet reviewed, so nothing is pinned): [JotaDeRodriguez/Bonsai_mcp](https://github.com/JotaDeRodriguez/Bonsai_mcp), MCP server for Bonsai inside Blender. Pin as a submodule after that review.
+Pinned MCP server: `bonsai-mcp/` → [JotaDeRodriguez/Bonsai_mcp](https://github.com/JotaDeRodriguez/Bonsai_mcp) (BlenderMCP fork with IFC tools for Bonsai/IfcOpenShell inside Blender; MIT; ~66 stars; last commit 2026-09-06 at pin). Also available without Blender: IfcOpenShell's official `ifcmcp` server (PyPI, LGPL-3.0-or-later) in [IfcOpenShell/IfcOpenShell](https://github.com/IfcOpenShell/IfcOpenShell).
 
 ## FOSS references
 
