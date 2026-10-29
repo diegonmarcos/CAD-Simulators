@@ -5,6 +5,7 @@
   "label": "CAD-Simulators",
   "code": "4.3.1.1",
   "kind": "repo",
+  "variant": "repo",
   "description": "DeepSc tools: agentic CAD (MCP) and more",
   "visibility": "public",
   "url": "https://github.com/diegonmarcos/CAD-Simulators",
