@@ -1,11 +1,11 @@
 [submodule "tools/cad/freecad-mcp"]
-	path = tools/cad/freecad-mcp
+	path = Structural-Designer/OpenCAD/freecad-mcp
 	url = https://github.com/neka-nat/freecad-mcp
 [submodule "tools/cad/blender-mcp"]
-	path = tools/cad/blender-mcp
+	path = Simulators/blender-mcp
 	url = https://github.com/ahujasid/blender-mcp
 [submodule "tools/cad/autocad-mcp"]
-	path = tools/cad/autocad-mcp
+	path = Structural-Designer/OpenCAD/autocad-mcp
 	url = https://github.com/puran-water/autocad-mcp
 [submodule "0_hub/DeepSc-___"]
 	path = 0_hub/DeepSc-___
