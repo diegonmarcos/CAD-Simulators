@@ -7,9 +7,9 @@
 [submodule "tools/cad/autocad-mcp"]
 	path = Structural-Designer/OpenCAD/autocad-mcp
 	url = https://github.com/puran-water/autocad-mcp
-[submodule "0_hub/DeepSc-___"]
-	path = 0_hub/DeepSc-___
-	url = https://github.com/diegonmarcos/DeepSc-___
+[submodule "0_hub/HardTech-___"]
+	path = 0_hub/HardTech-___
+	url = https://github.com/diegonmarcos/HardTech-___.git
 [submodule "Structural-Designer/OpenRevit/rvt-mcp"]
 	path = Structural-Designer/OpenRevit/rvt-mcp
 	url = https://github.com/bimwright/rvt-mcp

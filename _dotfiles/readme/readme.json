@@ -1,10 +1,10 @@
 {
-  "title": "CAD-Simulators",
-  "intro": "CAD and simulators for the DeepSc family (renamed from DeepSc-Tools, public). CAD tools are pinned git submodules of their upstream; sailytics is in-repo code (#1279 layout).",
+  "title": "HardTech-Stack-CAD-Simulators",
+  "intro": "CAD and simulators for the HardTech family (hub HardTech-___) (renamed from DeepSc-Tools, public). CAD tools are pinned git submodules of their upstream; sailytics is in-repo code (#1279 layout).",
   "sections": [
     {
       "title": "Structure",
-      "body": "```\nCAD-Simulators/\n  Structural-Designer/\n    OpenCAD/      freecad-mcp, autocad-mcp (submodules)\n    OpenRevit/    README, rvt-mcp (submodule, Revit MCP, Apache-2.0)\n    OpenBIM/      README, bonsai-mcp (submodule, IFC/Bonsai MCP, MIT)\n  Simulators/\n    blender-mcp/  (submodule)\n    sailytics/    (in-repo code)\n  0_hub/DeepSc-___\n```"
+      "body": "```\nCAD-Simulators/\n  Structural-Designer/\n    OpenCAD/      freecad-mcp, autocad-mcp (submodules)\n    OpenRevit/    README, rvt-mcp (submodule, Revit MCP, Apache-2.0)\n    OpenBIM/      README, bonsai-mcp (submodule, IFC/Bonsai MCP, MIT)\n  Simulators/\n    blender-mcp/  (submodule)\n    sailytics/    (in-repo code)\n  0_hub/HardTech-___\n```"
     },
     {
       "title": "Sailytics",

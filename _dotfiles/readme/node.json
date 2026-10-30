@@ -1,14 +1,14 @@
 {
   "schema": "readme-node/v1",
   "generated_by": "_git-repos-master readme-render.js nodeData() from projects-repos.json; DO NOT EDIT (node repos-sot.js sync-readmes)",
-  "name": "CAD-Simulators",
-  "label": "CAD-Simulators",
+  "name": "HardTech-Stack-CAD-Simulators",
+  "label": "HardTech-Stack-CAD-Simulators",
   "code": "4.3.1.1",
   "kind": "repo",
   "variant": "repo",
   "description": "DeepSc tools: agentic CAD (MCP) and more",
   "visibility": "public",
-  "url": "https://github.com/diegonmarcos/CAD-Simulators",
+  "url": "https://github.com/diegonmarcos/HardTech-Stack-CAD-Simulators",
   "developer": "Stark.x",
   "farm": "4.HardTech",
   "breadcrumb": [
@@ -32,15 +32,15 @@
     }
   ],
   "hub": {
-    "name": "DeepSc-___",
+    "name": "HardTech-___",
     "code": "4.0",
-    "url": "https://github.com/diegonmarcos/DeepSc-___"
+    "url": "https://github.com/diegonmarcos/HardTech-___"
   },
   "base_dir": "git",
   "members": [],
   "tree": [
     "├── 0_hub/",
-    "│   └── DeepSc-___ (submodule)",
+    "│   └── HardTech-___ (submodule)",
     "├── Simulators/",
     "│   ├── blender-mcp (submodule)",
     "│   └── sailytics/",
